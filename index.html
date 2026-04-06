@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Giggle &amp; Gathering Club – An exclusive family event venue on Rockaway Blvd. Mommy &amp; Me moments, afterschool adventures, workshops, and meaningful community gatherings curated by Vandana Harbance.">
+    <title>Giggle &amp; Gathering • Rockaway Blvd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400;500&amp;display=swap');
+        
+        :root {
+            --tw-color-primary: #d4a373;
+        }
+        
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        .tailwind-config {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), 
+                        url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #d4a373;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 25px 25px 50px -12px rgb(212 163 115 / 0.15);
+        }
+        
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 64px;
+            height: 3px;
+            background: linear-gradient(to right, #d4a373, #f5e8d3);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body class="tailwind-config">
+    <!-- NAVBAR -->
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-x-3">
+                <div class="w-10 h-10 bg-[#d4a373] rounded-2xl flex items-center justify-center text-white text-2xl shadow-inner">
+                    👶
+                </div>
+                <div>
+                    <h1 class="heading-font text-3xl tracking-[-1px] text-gray-900">giggle &amp; gathering</h1>
+                    <p class="text-[10px] text-[#d4a373] font-medium tracking-[1px] -mt-1">club</p>
+                </div>
+            </div>
+
+            <!-- Menu -->
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium text-gray-700">
+                <a href="#home" onclick="document.getElementById('home').scrollIntoView({ behavior: 'smooth' })" class="nav-link">HOME</a>
+                <a href="#about" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })" class="nav-link">OUR STORY</a>
+                <a href="#experiences" onclick="document.getElementById('experiences').scrollIntoView({ behavior: 'smooth' })" class="nav-link">EXPERIENCES</a>
+                <a href="#venue" onclick="document.getElementById('venue').scrollIntoView({ behavior: 'smooth' })" class="nav-link">THE VENUE</a>
+                <a href="#join" onclick="document.getElementById('join').scrollIntoView({ behavior: 'smooth' })" class="nav-link">JOIN US</a>
+            </div>
+
+            <div class="flex items-center gap-x-4">
+                <!-- Exclusive badge -->
+                <div onclick="window.location.href='#join'" class="hidden sm:flex items-center px-4 py-2 text-xs font-semibold tracking-widest bg-[#f5e8d3] text-[#8c5f1f] rounded-3xl hover:bg-[#d4a373] hover:text-white cursor-pointer">
+                    <i class="fa-solid fa-gem mr-1"></i>
+                    MEMBERSHIP OPEN
+                </div>
+                
+                <a href="#join" onclick="document.getElementById('join').scrollIntoView({ behavior: 'smooth' })" 
+                   class="px-7 py-3 bg-[#d4a373] hover:bg-[#c18e4f] text-white text-sm font-semibold rounded-3xl flex items-center gap-x-2 shadow-md">
+                    <i class="fa-solid fa-calendar"></i>
+                    BOOK A SPOT
+                </a>
+
+                <!-- Mobile menu button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-2xl text-gray-700">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-6 py-4">
+            <div class="flex flex-col gap-y-4 text-sm font-medium text-gray-700">
+                <a href="#home" onclick="toggleMobileMenu()" class="py-2">HOME</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="py-2">OUR STORY</a>
+                <a href="#experiences" onclick="toggleMobileMenu()" class="py-2">EXPERIENCES</a>
+                <a href="#venue" onclick="toggleMobileMenu()" class="py-2">THE VENUE</a>
+                <a href="#join" onclick="toggleMobileMenu()" class="py-2">JOIN US</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero-bg h-screen flex items-center text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-3xl mb-6">
+                    <div class="w-2 h-2 bg-[#d4a373] rounded-full animate-pulse"></div>
+                    ROCKAWAY BLVD • QUEENS
+                </div>
+                
+                <h1 class="heading-font text-6xl md:text-7xl leading-none tracking-[-2px] mb-6">
+                    Where laughter<br>finds its home.
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-white/90 mb-10 max-w-md">
+                    An intimate event venue crafted by stay-at-home mom Vandana Harbance for meaningful Mommy &amp; Me moments and enriching afterschool experiences.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#join" onclick="document.getElementById('join').scrollIntoView({ behavior: 'smooth' })" 
+                       class="px-8 py-5 bg-white text-gray-900 rounded-3xl text-lg font-semibold flex items-center gap-x-3 hover:shadow-2xl">
+                        RESERVE YOUR MOMENT
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    
+                    <a href="#about" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })" 
+                       class="px-8 py-5 border border-white/70 hover:border-white text-white rounded-3xl text-lg font-medium flex items-center">
+                        MEET VANDANA
+                    </a>
+                </div>
+                
+                <div class="mt-16 flex items-center gap-x-8 text-sm">
+                    <div class="flex -space-x-4">
+                        <div class="w-8 h-8 bg-[#f5e8d3] text-[#8c5f1f] rounded-2xl flex items-center justify-center text-xl">👩‍❤️‍👧</div>
+                        <div class="w-8 h-8 bg-[#d4a373] text-white rounded-2xl flex items-center justify-center text-xl">🧒</div>
+                        <div class="w-8 h-8 bg-white text-[#d4a373] rounded-2xl flex items-center justify-center text-xl">🎨</div>
+                    </div>
+                    <p class="text-white/80">Limited to 12 families per session •<br>Curated with love since 2025</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 flex flex-col items-center text-white/60 text-xs tracking-widest">
+            <p>SCROLL FOR THE STORY</p>
+            <i class="fa-solid fa-chevron-down mt-2 animate-bounce"></i>
+        </div>
+        
+        <!-- Floating badges -->
+        <div class="hidden xl:block absolute bottom-12 right-12 bg-white/90 text-gray-900 backdrop-blur rounded-3xl px-6 py-4 shadow-2xl max-w-[220px]">
+            <div class="flex items-center gap-x-3">
+                <i class="fa-solid fa-heart text-[#d4a373] text-3xl"></i>
+                <div>
+                    <p class="font-semibold">“Children do what they see.<br>Let’s show them our best.”</p>
+                    <p class="text-xs text-gray-500 mt-1">- Vandana Harbance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT / OUR STORY -->
+    <section id="about" class="py-24 bg-[#fdfaf5]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <!-- Left text -->
+                <div class="md:col-span-7">
+                    <div class="uppercase text-[#d4a373] text-sm font-semibold tracking-[1.5px]">A MOTHER’S VISION • EST. 2025</div>
+                    <h2 class="heading-font text-5xl leading-none tracking-[-1px] text-gray-900 mt-3 mb-8">
+                        Hello, I’m Vandana Harbance.
+                    </h2>
+                    
+                    <div class="prose prose-lg text-gray-600 max-w-none">
+                        <p>30-year-old Hunter College graduate, former three-job hustler, and proud stay-at-home mom to Benjamin (Jan 2023) and Avani (Nov 2023).</p>
+                        <p>I built my first business at 12 — buying wholesale costume jewelry and selling it to my classmates. That same entrepreneurial spirit never left me. After years of working and studying while pregnant, I chose to pour my energy into motherhood… and now I’m ready to bring it full circle.</p>
+                        <p><strong>Giggle &amp; Gathering Club</strong> is the space I always wished existed when I became a mom: an elegant, intimate venue where parents and children truly connect through play, creativity, and learning.</p>
+                    </div>
+                    
+                    <div class="flex items-center gap-x-6 mt-12">
+                        <div class="flex items-center">
+                            <div class="text-5xl font-light text-[#d4a373]">2</div>
+                            <div class="ml-3 text-sm leading-tight">
+                                TODDLERS<br>
+                                <span class="text-gray-400">Benjamin &amp; Avani</span>
+                            </div>
+                        </div>
+                        <div class="h-12 w-px bg-gray-300"></div>
+                        <div>
+                            <p class="font-medium">Rockaway Blvd, Queens</p>
+                            <p class="text-sm text-gray-500">Steps from local elementary schools</p>
+                        </div>
+                        <div class="h-12 w-px bg-gray-300"></div>
+                        <a href="#experiences" class="flex items-center text-[#d4a373] hover:text-[#c18e4f] font-medium">
+                            SEE WHAT WE OFFER 
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right portrait / image placeholder -->
+                <div class="md:col-span-5">
+                    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                        <div class="aspect-video bg-gradient-to-br from-[#f5e8d3] to-[#d4a373]/20 flex items-center justify-center text-8xl">
+                            👩‍👧‍👦
+                            <div class="absolute text-center text-white drop-shadow-xl">
+                                <p class="text-2xl font-medium">Vandana + Benjamin + Avani</p>
+                                <p class="text-xs tracking-widest mt-1 opacity-75">HARBANCE FAMILY</p>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <p class="italic text-gray-600 text-lg">
+                                “I want to open up the creative side of parents again so their children can see that we were once there also.”
+                            </p>
+                            <div class="mt-6 flex justify-end">
+                                <div class="text-right">
+                                    <p class="font-semibold">— Vandana Harbance</p>
+                                    <p class="text-xs text-gray-400">Founder &amp; Curator</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCES -->
+    <section id="experiences" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-5 py-2 bg-[#f5e8d3] text-[#8c5f1f] text-sm rounded-3xl font-semibold">CAREFULLY CURATED BY VANDANA</span>
+                <h2 class="heading-font text-5xl tracking-[-1px] mt-4">Mommy &amp; Me • Afterschool • Gatherings</h2>
+                <p class="text-gray-600 mt-4 max-w-md mx-auto">Intimate sessions designed to nurture bonds, spark creativity, and build confident little humans.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8 shadow-sm">
+                    <div class="text-6xl mb-6">👩‍❤️‍👧</div>
+                    <h3 class="text-2xl font-semibold mb-2">Mommy &amp; Me Magic</h3>
+                    <p class="text-gray-500 mb-8">Weekly interactive sessions for toddlers &amp; parents. Yoga, music, sensory play, and story time that strengthen your bond.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-[#d4a373] mr-3"></i> Kiddie Gym &amp; Dance</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-[#d4a373] mr-3"></i> Music &amp; Movement</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-[#d4a373] mr-3"></i> Baby Yoga &amp; Mindfulness</li>
+                    </ul>
+                    <div class="mt-10 text-xs flex justify-between items-end">
+                        <div>
+                            <span class="font-semibold">Ages 0–5</span><br>
+                            <span class="text-[#d4a373]">Tues &amp; Thurs • 10am</span>
+                        </div>
+                        <a href="#join" class="text-[#d4a373] text-sm font-medium flex items-center">Book session <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8 shadow-sm">
+                    <div class="text-6xl mb-6">🎒</div>
+                    <h3 class="text-2xl font-semibold mb-2">Afterschool Adventures</h3>
+                    <p class="text-gray-500 mb-8">Safe, enriching programs right after school. Homework help, creative outlets, and skill-building for elementary kids.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-[#d4a373] mr-3"></i> Tutoring &amp; Homework Club</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-[#d4a373] mr-3"></i> Art &amp; Craft Studio</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-[#d4a373] mr-3"></i> Dance, Music &amp; Drama</li>
+                    </ul>
+                    <div class="mt-10 text-xs flex justify-between items-end">
+                        <div>
+                            <span class="font-semibold">Ages 5–11</span><br>
+                            <span class="text-[#d4a373]">Mon–Fri • 3–6pm</span>
+                        </div>
+                        <a href="#join" class="text-[#d4a373] text-sm font-medium flex items-center">Enroll now <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8 shadow-sm">
+                    <div class="text-6xl mb-6">🎨</div>
+                    <h3 class="text-2xl font-semibold mb-2">Signature Workshops</h3>
+                    <p class="text-gray-500 mb-8">Monthly events for the whole family or just the grown-ups. Intimate, elegant, and unforgettable.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-[#d4a373] mr-3"></i> Cake Decorating Nights</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-[#d4a373] mr-3"></i> Sip &amp; Paint for Moms</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-[#d4a373] mr-3"></i> Family Art &amp; Yoga</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-[#d4a373] mr-3"></i> Talk Time Circles</li>
+                    </ul>
+                    <div class="mt-10 text-xs flex justify-between items-end">
+                        <div>
+                            <span class="font-semibold">All ages</span><br>
+                            <span class="text-[#d4a373]">Rotating schedule</span>
+                        </div>
+                        <a href="#join" class="text-[#d4a373] text-sm font-medium flex items-center">See calendar <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VENUE -->
+    <section id="venue" class="py-24 bg-[#fdfaf5]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16">
+                <div class="md:col-span-5">
+                    <div class="sticky top-8">
+                        <span class="uppercase text-xs font-semibold tracking-widest text-[#d4a373]">LOCATION • ROCKAWAY BLVD</span>
+                        <h2 class="heading-font text-5xl leading-none mt-4 mb-8">An open, elegant space designed for connection.</h2>
+                        <p class="text-gray-600">Just steps from elementary schools and nestled in a family-friendly neighborhood. Our venue features soft natural light, child-safe play zones, and a warm gathering area for parents.</p>
+                        
+                        <div class="mt-12 grid grid-cols-2 gap-8 text-sm">
+                            <div>
+                                <i class="fa-solid fa-child-reaching text-4xl text-[#d4a373] mb-4"></i>
+                                <p class="font-medium">Kiddie Gym &amp; Play Area</p>
+                                <p class="text-gray-400">Soft flooring, age-appropriate toys, sensory walls</p>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-palette text-4xl text-[#d4a373] mb-4"></i>
+                                <p class="font-medium">Creative Studio</p>
+                                <p class="text-gray-400">Art tables, easels, mess-friendly surfaces</p>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-mug-hot text-4xl text-[#d4a373] mb-4"></i>
+                                <p class="font-medium">Parents’ Lounge</p>
+                                <p class="text-gray-400">Coffee station, seating, free Wi-Fi</p>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-book text-4xl text-[#d4a373] mb-4"></i>
+                                <p class="font-medium">Learning Nook</p>
+                                <p class="text-gray-400">Books, quiet reading corner, tutoring space</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7">
+                    <div class="bg-white rounded-3xl shadow-xl overflow-hidden aspect-video flex items-center justify-center relative">
+                        <!-- Placeholder map / venue image -->
+                        <div class="w-full h-full bg-gradient-to-br from-[#f5e8d3] via-[#e8d9c2] to-[#d4a373]/30 flex flex-col items-center justify-center text-center px-12">
+                            <div class="text-7xl mb-6">📍</div>
+                            <h4 class="text-2xl font-semibold text-gray-800">Rockaway Boulevard, Queens, NY</h4>
+                            <p class="text-gray-600 mt-2">Near multiple elementary schools • Ample free parking • Wheelchair accessible</p>
+                            
+                            <div class="mt-12 flex flex-wrap gap-6 justify-center text-xs">
+                                <div class="bg-white px-6 py-3 rounded-3xl shadow flex items-center"><i class="fa-solid fa-car mr-2"></i> 2 min walk to school drop-off</div>
+                                <div class="bg-white px-6 py-3 rounded-3xl shadow flex items-center"><i class="fa-solid fa-mug-hot mr-2"></i> Coffee &amp; snacks always on</div>
+                                <div class="bg-white px-6 py-3 rounded-3xl shadow flex items-center"><i class="fa-solid fa-shield-halved mr-2"></i> Fully insured &amp; CPR certified</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center text-xs text-gray-400 mt-4">Exact address provided upon booking • Private entrance for club members</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY / WHY WE EXIST -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <i class="fa-solid fa-seedling text-7xl text-[#d4a373] mb-8"></i>
+            <h2 class="heading-font text-5xl tracking-[-1px]">It starts with us.</h2>
+            <div class="max-w-2xl mx-auto mt-8 text-xl leading-relaxed text-gray-600">
+                Education is the key to a successful generation — and it begins at home. 
+                Children do what they see, not what they are told. 
+                I created Giggle &amp; Gathering so parents could rediscover their own creativity and pass it on.
+            </div>
+            <div class="mt-12 text-[#d4a373] text-sm font-medium flex items-center justify-center gap-x-8">
+                <div class="flex items-center"><span class="text-4xl mr-4">👶</span> Benjamin &amp; Avani approve</div>
+                <div class="h-px w-12 bg-[#d4a373]"></div>
+                <div>One family at a time • One giggle at a time</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOIN / BOOK -->
+    <section id="join" class="py-24 bg-gradient-to-b from-[#fdfaf5] to-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-white border border-[#f5e8d3] rounded-3xl p-12 md:p-16 shadow-2xl">
+                <div class="grid md:grid-cols-12 gap-12">
+                    <div class="md:col-span-7">
+                        <h2 class="heading-font text-5xl">Ready to create memories together?</h2>
+                        <p class="text-xl mt-4 text-gray-600">Spots are intentionally limited to keep every session intimate and meaningful. Choose your experience below or request a private gathering.</p>
+                        
+                        <div class="mt-12 space-y-8">
+                            <div onclick="fakeBookClick(this)" class="flex justify-between items-center border-b pb-8 cursor-pointer group">
+                                <div>
+                                    <p class="font-semibold text-xl">Mommy &amp; Me Drop-In • $45/session</p>
+                                    <p class="text-gray-500">Tuesdays or Thursdays • 60 minutes</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs px-4 py-1 bg-[#d4a373] text-white rounded-3xl">4 spots left this week</span>
+                                    <p class="mt-3 text-[#d4a373] group-hover:text-[#c18e4f] text-sm font-medium">BOOK NOW →</p>
+                                </div>
+                            </div>
+                            
+                            <div onclick="fakeBookClick(this)" class="flex justify-between items-center border-b pb-8 cursor-pointer group">
+                                <div>
+                                    <p class="font-semibold text-xl">Afterschool Membership • $195/week</p>
+                                    <p class="text-gray-500">Mon–Fri pickup • Includes snack &amp; materials</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs px-4 py-1 bg-[#d4a373] text-white rounded-3xl">Waitlist open</span>
+                                    <p class="mt-3 text-[#d4a373] group-hover:text-[#c18e4f] text-sm font-medium">JOIN WAITLIST →</p>
+                                </div>
+                            </div>
+                            
+                            <div onclick="fakeBookClick(this)" class="flex justify-between items-center cursor-pointer group">
+                                <div>
+                                    <p class="font-semibold text-xl">Private Family Gathering or Birthday • From $375</p>
+                                    <p class="text-gray-500">Customize your own 2-hour experience</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="mt-3 text-[#d4a373] group-hover:text-[#c18e4f] text-sm font-medium">INQUIRE →</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact form -->
+                    <div class="md:col-span-5 bg-[#fdfaf5] rounded-3xl p-8">
+                        <p class="font-semibold mb-6">Or tell us more about your family</p>
+                        <form id="contactForm" onsubmit="handleSubmit(event)" class="space-y-6">
+                            <div>
+                                <label class="block text-xs mb-1">YOUR NAME</label>
+                                <input type="text" value="Vandana Harbance" class="w-full px-5 py-4 bg-white border border-gray-200 rounded-3xl focus:outline-none focus:border-[#d4a373]">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs mb-1">EMAIL</label>
+                                    <input type="email" placeholder="your@email.com" class="w-full px-5 py-4 bg-white border border-gray-200 rounded-3xl focus:outline-none focus:border-[#d4a373]">
+                                </div>
+                                <div>
+                                    <label class="block text-xs mb-1">PHONE</label>
+                                    <input type="tel" placeholder="(347) XXX-XXXX" class="w-full px-5 py-4 bg-white border border-gray-200 rounded-3xl focus:outline-none focus:border-[#d4a373]">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs mb-1">WHAT ARE YOU INTERESTED IN?</label>
+                                <select class="w-full px-5 py-4 bg-white border border-gray-200 rounded-3xl focus:outline-none focus:border-[#d4a373]">
+                                    <option>Mommy &amp; Me sessions</option>
+                                    <option>Afterschool program</option>
+                                    <option>Private workshop or birthday</option>
+                                    <option>Just want to say hello!</option>
+                                </select>
+                            </div>
+                            <button type="submit" 
+                                    class="w-full py-5 bg-[#d4a373] hover:bg-[#c18e4f] text-white font-semibold rounded-3xl text-lg flex items-center justify-center">
+                                SEND MESSAGE TO VANDANA 
+                                <i class="fa-solid fa-paper-plane ml-3"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white/80 py-16">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-y-12">
+            <div class="md:col-span-5">
+                <div class="flex items-center text-white mb-6">
+                    <div class="w-9 h-9 bg-[#d4a373] rounded-2xl flex items-center justify-center text-3xl">👶</div>
+                    <h1 class="heading-font text-4xl ml-3">giggle &amp; gathering</h1>
+                </div>
+                <p class="max-w-xs">A labor of love by Vandana Harbance. Creating spaces where families thrive, one giggle at a time.</p>
+                <p class="text-xs mt-12 opacity-40">© 2026 Giggle &amp; Gathering Club • All Rights Reserved</p>
+            </div>
+            
+            <div class="md:col-span-2">
+                <p class="uppercase text-xs mb-4">QUICK LINKS</p>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#about" class="hover:text-white">Our Story</a></li>
+                    <li><a href="#experiences" class="hover:text-white">Experiences</a></li>
+                    <li><a href="#venue" class="hover:text-white">The Venue</a></li>
+                </ul>
+            </div>
+            
+            <div class="md:col-span-2">
+                <p class="uppercase text-xs mb-4">CONNECT</p>
+                <div class="flex gap-x-6 text-2xl">
+                    <i onclick="alert('Instagram coming soon! ✨')" class="fa-brands fa-instagram cursor-pointer hover:text-[#d4a373]"></i>
+                    <i onclick="alert('TikTok coming soon! ✨')" class="fa-brands fa-tiktok cursor-pointer hover:text-[#d4a373]"></i>
+                    <i onclick="alert('Facebook coming soon! ✨')" class="fa-brands fa-facebook cursor-pointer hover:text-[#d4a373]"></i>
+                </div>
+                <p class="mt-8 text-xs">Rockaway Boulevard<br>Queens, New York</p>
+            </div>
+            
+            <div class="md:col-span-3">
+                <p class="text-sm">“If more parents were involved and taught how to navigate parenthood in a more meaningful way, it can benefit the entire world.”</p>
+                <p class="text-[#d4a373] text-xs mt-8">— Vandana Harbance, Founder</p>
+                
+                <div class="mt-12 text-xs flex items-center">
+                    Made with ❤️ for Benjamin &amp; Avani
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already loaded
+        function initializeTailwind() {
+            return {
+                config(userConfig = {}) {
+                    return {
+                        content: [],
+                        theme: {
+                            extend: {},
+                        },
+                        plugins: [],
+                        ...userConfig,
+                    }
+                },
+                theme(userConfig = {}) {
+                    return {
+                        ...this.defaultTheme(),
+                        ...userConfig,
+                    }
+                },
+                defaultTheme() {
+                    return {
+                        extend: {
+                            colors: {
+                                primary: '#d4a373'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Run Tailwind
+        const config = initializeTailwind().config()
+        document.documentElement.setAttribute('data-tailwind-config', JSON.stringify(config))
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu')
+            menu.classList.toggle('hidden')
+        }
+        
+        // Fake booking click animation
+        function fakeBookClick(el) {
+            el.style.transform = 'scale(0.97)'
+            setTimeout(() => {
+                el.style.transform = 'scale(1)'
+                alert("🎉 Thank you! Vandana will personally confirm your booking within 24 hours. Welcome to the club!")
+            }, 180)
+        }
+        
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault()
+            const form = document.getElementById('contactForm')
+            form.innerHTML = `
+                <div class="text-center py-12">
+                    <i class="fa-solid fa-check-circle text-7xl text-[#d4a373]"></i>
+                    <p class="mt-6 text-2xl font-medium">Thank you!</p>
+                    <p class="text-gray-600">Vandana received your message. She can’t wait to welcome your family.</p>
+                    <button onclick="location.reload()" class="mt-8 px-8 py-4 border rounded-3xl text-sm">BACK TO SITE</button>
+                </div>
+            `
+            console.log('%c✅ Form submitted to Vandana Harbance (demo)', 'color:#d4a373; font-family:monospace')
+        }
+        
+        // Console welcome
+        console.log('%c👋 Welcome to Giggle & Gathering Club — built with love for Vandana Harbance and her beautiful family.', 'color:#d4a373; font-size:13px')
+    </script>
+</body>
+</html>
+```​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
